@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import {
   Card,
   PasswordInput,
@@ -34,6 +35,15 @@ export default function Demo() {
         value !== values.password ? "Passwords did not match" : null,
     },
   });
+  const getAllUsers= async()=>{
+    try {
+      const response = await axios.post("http://localhost:3000")
+      console.log(response)
+    } catch (error) {
+      console.log(error)}
+    }
+      
+    <form key="signupForm" onSubmit={form.onSubmit(getAllUsers)}></form>
 
   return (
     <Grid
@@ -77,7 +87,7 @@ export default function Demo() {
                 Submit
               </Button>
             </Card>
-            <p className="info p">Are you not a member? Quickly  <Link href={"/auth/labrotary-sign-up"} className="span"><span>Sign Up!</span></Link> </p>
+            <p className="info p">Are you not a member? Quickly  <Link href={"/sign-up"} className="span"><span>Sign Up!</span></Link> </p>
           </form>
         </Card>
       </Grid.Col>
