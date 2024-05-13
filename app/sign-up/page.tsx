@@ -45,7 +45,7 @@ export default function Demo() {
       setShowAlert(true)
       setTimeout(() => {
         setShowAlert(false);
-        router.push("http://localhost:3000/");
+        router.push("http://localhost:3000/patient-record");
       }, 3000);
     } catch (error) {
       console.log(error);
