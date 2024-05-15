@@ -50,41 +50,44 @@ export default function Demo() {
       laborant: "",
     },
 
-    validationRules: {
-      name: hasLength({ min: 2, max: 20 }),
-      lastname: hasLength({ min: 2, max: 20 }),
-      tc: hasLength({ min: 11, max: 11 }),
-      age: isInRange({ min: 0, max: 99 }),
+    validate: {
+      name: hasLength({ min: 2, max: 20 }, "Name must be 2-20 characters long."),
+      lastname: hasLength({ min: 2, max: 20 }, "Lastname must be 2-20 characters long."),
+      tc: hasLength({ min: 11, max: 11 }, "TC Number must be 11 digits long."),
+      age: isInRange({ min: 0, max: 99 }, "Name must be 0-99 characters long."),
       birthday: {
         rule: (value) => value instanceof Date,
         error: "Please enter a valid date for Birthday Date.",
       },
-      diagnosisTitle: hasLength({ min: 2, max: 20 }),
-      diagnosisDetails: hasLength({ min: 2, max: 200 }),
+      diagnosisTitle: hasLength({ min: 2, max: 20 }, "Diagnosis Title must be 2-20 characters long."),
+      diagnosisDetails: hasLength({ min: 2, max: 200 }, "Diagnosis Details must be 2-200 characters long."),
       diagnosisDate: {
         rule: (value) => value instanceof Date,
         error: "Please enter a valid date for Diagnosis Date.",
       },
-      laborant: hasLength({ min: 2, max: 20 }),
+      laborant: hasLength({ min: 2, max: 20 }, "Name must be 2-20 characters long."),
     },
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (form.isValid) {
+  const handleBirthdayDateChange = (date) => {
+    date.setHours(date.getHours() + 3);
+    setSelectedBirthdayDate(date);
+  };
+  
+  const handleDiagnosisDateChange = (date) => {
+    date.setHours(date.getHours() + 3);
+    setSelectedDiagnosisDate(date);
+  };
+
+  const handleSubmit = async (values) => {
+  
       try {
-        // Form verilerini al
         const formData = form.getValues();
-        // Tarihleri ISO formatına dönüştür ve formData'ya ekle
         formData.birthday = selectedBirthdayDate?.toISOString() || "";
         formData.diagnosisDate = selectedDiagnosisDate?.toISOString() || "";
-  
-        // Tüm alanların dolu olduğunu kontrol et
         const allFieldsFilled = Object.values(formData).every((value) => value !== "");
-  
-        // Eğer tüm alanlar doluysa isteği gönder
         if (allFieldsFilled) {
-          const response = await axios.post("http://localhost:3000/patient-record", formData);
+          const response = await axios.post("http://localhost:3000/patient-record", formData, values);
           console.log(response);
         } else {
           console.log("Please fill in all fields.");
@@ -92,16 +95,12 @@ export default function Demo() {
       } catch (error) {
         console.error(error);
       }
-    } else {
-      console.log("Form validation failed.");
-    }
   };
-  
   return (
     <>
       <Drawer opened={opened} onClose={close}>
         <h1 className="info">Patient Registration Screen</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={form.onSubmit(handleSubmit)}>
           <h3 className="info">
             &mdash;&mdash;&mdash;&mdash; Personal Information{" "}
             &mdash;&mdash;&mdash;&mdash;
@@ -146,12 +145,13 @@ export default function Demo() {
           </Grid>
 
           <DatePickerInput
-            label="Birthday Date"
-            placeholder="Birthday Date"
-            mt="md"
-            withAsterisk
-            value={selectedBirthdayDate}
-            onChange={setSelectedBirthdayDate}
+          label="Birthday Date"
+          placeholder="Birthday Date"
+          mt="md"
+          valueFormat="DD MMM YYYY"
+          withAsterisk
+          value={selectedBirthdayDate}
+          onChange={handleBirthdayDateChange}
           />
           <h3 className="info">
             &mdash;&mdash;&mdash;&mdash; Diagnosis Information{" "}
@@ -178,8 +178,9 @@ export default function Demo() {
             placeholder="Diagnosis Date"
             mt="md"
             withAsterisk
+            valueFormat="DD MMM YYYY"
             value={selectedDiagnosisDate}
-            onChange={setSelectedDiagnosisDate}
+            onChange={handleDiagnosisDateChange}
           />
           <Group justify="center" mt="md">
             <FileButton
