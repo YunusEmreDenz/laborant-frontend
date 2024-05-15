@@ -87,7 +87,7 @@ export default function Demo() {
         formData.diagnosisDate = selectedDiagnosisDate?.toISOString() || "";
         const allFieldsFilled = Object.values(formData).every((value) => value !== "");
         if (allFieldsFilled) {
-          const response = await axios.post("http://localhost:3000/patient-record", formData, values);
+          const response = await axios.post("http://localhost:3001/patients", formData, values);
           console.log(response);
         } else {
           console.log("Please fill in all fields.");

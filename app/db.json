@@ -1,0 +1,40 @@
+{
+  "patients": [
+    {
+      "id": "1b2a",
+      "name": "asd",
+      "lastname": "asd",
+      "tc": "21312312312",
+      "age": 12,
+      "birthday": "2024-05-09T00:00:00.000Z",
+      "diagnosisTitle": "asd",
+      "diagnosisDetails": "asd",
+      "diagnosisDate": "2024-05-30T00:00:00.000Z",
+      "laborant": "asd"
+    },
+    {
+      "id": "2704",
+      "name": "asd",
+      "lastname": "asdasd",
+      "tc": "12312312312",
+      "age": 12,
+      "birthday": "2024-05-10T00:00:00.000Z",
+      "diagnosisTitle": "asd",
+      "diagnosisDetails": "asd",
+      "diagnosisDate": "2024-05-31T00:00:00.000Z",
+      "laborant": "asd"
+    },
+    {
+      "id": "7517",
+      "name": "yun",
+      "lastname": "den",
+      "tc": "12312312312",
+      "age": 21,
+      "birthday": "2024-05-10T00:00:00.000Z",
+      "diagnosisTitle": "baba",
+      "diagnosisDetails": "baba",
+      "diagnosisDate": "2024-05-25T00:00:00.000Z",
+      "laborant": "polat"
+    }
+  ]
+}
