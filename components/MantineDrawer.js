@@ -217,7 +217,7 @@ export default function Demo() {
           </Group>
         </form>
       </Drawer>
-      <MantineButton onClick={open}>Hasta Kayıt Ekranı</MantineButton>{" "}
+      <MantineButton onClick={open} m="lg" >Hasta Kayıt Ekranı</MantineButton>{" "}
     </>
   );
 }
