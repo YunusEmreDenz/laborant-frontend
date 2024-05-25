@@ -49,16 +49,17 @@
       "laborant": "asdasdasd"
     },
     {
-      "id": "5f30",
-      "name": "murat can",
-      "lastname": "başak",
-      "tc": "12342525363",
-      "age": 23,
-      "birthday": "2024-05-17T00:00:00.000Z",
-      "diagnosisTitle": "adsfzx",
-      "diagnosisDetails": "xcv",
-      "diagnosisDate": "2024-05-20T00:00:00.000Z",
-      "laborant": "fghfgjfg"
+      "id": "0c50",
+      "name": "emre",
+      "lastname": "deniz",
+      "tc": "56343456345",
+      "age": 21,
+      "birthday": "2003-01-26T01:00:00.000Z",
+      "diagnosisTitle": "Baba",
+      "diagnosisDetails": "Mafya Babası",
+      "diagnosisDate": "2003-01-26T01:00:00.000Z",
+      "laborant": "yunus deniz"
     }
+
   ]
 }
