@@ -59,7 +59,18 @@
       "diagnosisDetails": "Mafya Babası",
       "diagnosisDate": "2003-01-26T01:00:00.000Z",
       "laborant": "yunus deniz"
+    },
+    {
+      "id": "8741",
+      "name": "sad",
+      "lastname": "asd",
+      "tc": "12312312312",
+      "age": 12,
+      "birthday": "2024-05-02T00:00:00.000Z",
+      "diagnosisTitle": "asd",
+      "diagnosisDetails": "asfassdfasfa",
+      "diagnosisDate": "2024-05-30T00:00:00.000Z",
+      "laborant": "sad"
     }
-
   ]
 }
