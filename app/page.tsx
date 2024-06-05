@@ -1,4 +1,5 @@
 "use client";
+import "./app.css"
 import axios from "axios";
 import {
   Card,
