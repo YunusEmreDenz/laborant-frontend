@@ -47,9 +47,6 @@ export default function Demo() {
                   Diagnosis Title: {patient.diagnosisTitle}
                 </Text>
                 <Text mt="xs" size="sm">
-                  Diagnosis Details: {patient.diagnosisDetails}
-                </Text>
-                <Text mt="xs" size="sm">
                   Laborant: {patient.laborant}
                 </Text>
                 <Link href={`/patients/${patient.id}`}>

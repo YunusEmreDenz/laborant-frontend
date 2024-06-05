@@ -33,6 +33,14 @@ export default function Demo() {
   const [file, setFile] = useState(null);
   const resetRef = useRef(null);
 
+  const formatDate = (date) => {
+    if (!date) return "";
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Aylar 0-11 arası olduğundan +1 yapıyoruz
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   const clearFile = () => {
     setFile(null);
   };
@@ -79,23 +87,38 @@ export default function Demo() {
     setSelectedDiagnosisDate(date);
   };
 
-  const handleSubmit = async (values) => {
+  const generateRandomId = () => {
+    const idLength = 7;
+    let id = "";
+    const characters = "0123456789";
   
-      try {
-        const formData = form.getValues();
-        formData.birthday = selectedBirthdayDate?.toISOString() || "";
-        formData.diagnosisDate = selectedDiagnosisDate?.toISOString() || "";
-        const allFieldsFilled = Object.values(formData).every((value) => value !== "");
-        if (allFieldsFilled) {
-          const response = await axios.post("http://localhost:3001/patients", formData, values);
-          console.log(response);
-        } else {
-          console.log("Please fill in all fields.");
-        }
-      } catch (error) {
-        console.error(error);
-      }
+    for (let i = 0; i < idLength; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      id += characters[randomIndex];
+    }
+  
+    return id;
   };
+  
+  const handleSubmit = async (values) => {
+    try {
+      const formData = form.getValues();
+      formData.id = generateRandomId(); 
+      formData.birthday = formatDate(selectedBirthdayDate);
+      formData.diagnosisDate = formatDate(selectedDiagnosisDate);
+      const allFieldsFilled = Object.values(formData).every((value) => value !== "");
+      if (allFieldsFilled) {
+        const response = await axios.post("http://localhost:3001/patients", formData, values);
+        console.log(response);
+      } else {
+        console.log("Please fill in all fields.");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  
   return (
     <>
       <Drawer opened={opened} onClose={close}>

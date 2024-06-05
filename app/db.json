@@ -1,64 +1,28 @@
 {
   "patients": [
     {
-      "id": "4186",
-      "name": "kadir",
-      "lastname": "deniz",
-      "tc": "32132131332",
+      "id": "7573959",
+      "name": "asdas",
+      "lastname": "asdas",
+      "tc": "12312312313",
       "age": 12,
-      "birthday": "2024-05-09T00:00:00.000Z",
+      "birthday": "2024-06-07",
       "diagnosisTitle": "asd",
-      "diagnosisDetails": "asd",
-      "diagnosisDate": "2024-06-01T00:00:00.000Z",
+      "diagnosisDetails": "dsf",
+      "diagnosisDate": "2024-06-28",
       "laborant": "asd"
     },
     {
-      "id": "d06b",
-      "name": "yunus",
-      "lastname": "deniz",
-      "tc": "12321312312",
+      "id": "8501228",
+      "name": "asd",
+      "lastname": "asd",
+      "tc": "12312312312",
       "age": 12,
-      "birthday": "2024-05-09T00:00:00.000Z",
+      "birthday": "2024-06-14",
       "diagnosisTitle": "asd",
       "diagnosisDetails": "asd",
-      "diagnosisDate": "2024-05-30T00:00:00.000Z",
+      "diagnosisDate": "2024-06-21",
       "laborant": "asd"
-    },
-    {
-      "id": "ee67",
-      "name": "esin",
-      "lastname": "deniz",
-      "tc": "12321123322",
-      "age": 32,
-      "birthday": "2024-05-18T00:00:00.000Z",
-      "diagnosisTitle": "asdasd",
-      "diagnosisDetails": "asddasd",
-      "diagnosisDate": "2024-05-27T00:00:00.000Z",
-      "laborant": "asdasd"
-    },
-    {
-      "id": "6859",
-      "name": "abdullah",
-      "lastname": "deniz",
-      "tc": "12332423422",
-      "age": 41,
-      "birthday": "2024-05-04T00:00:00.000Z",
-      "diagnosisTitle": "asdasdsad",
-      "diagnosisDetails": "asddasdasd",
-      "diagnosisDate": "2024-05-14T00:00:00.000Z",
-      "laborant": "asdasdasd"
-    },
-    {
-      "id": "5f30",
-      "name": "murat can",
-      "lastname": "başak",
-      "tc": "12342525363",
-      "age": 23,
-      "birthday": "2024-05-17T00:00:00.000Z",
-      "diagnosisTitle": "adsfzx",
-      "diagnosisDetails": "xcv",
-      "diagnosisDate": "2024-05-20T00:00:00.000Z",
-      "laborant": "fghfgjfg"
     }
   ]
 }
